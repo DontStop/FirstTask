@@ -10,6 +10,7 @@ class RequestsController < ApplicationController
   # GET /requests/1
   # GET /requests/1.json
   def show
+
   end
 
   # GET /requests/new
@@ -54,9 +55,10 @@ class RequestsController < ApplicationController
   # DELETE /requests/1
   # DELETE /requests/1.json
   def destroy
+    @request=Request.find_by_name(params[:name])
     @request.destroy
     respond_to do |format|
-      format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
+      format.html { redirect_to requests_path, notice: 'Request was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -4,7 +4,7 @@ class MaketrapController < ApplicationController
     #format.html { redirect_to requests_path}
     #if @request==nil
       respond_to do |format|
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
+        format.html { redirect_to requests_path, notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       end
    # end
