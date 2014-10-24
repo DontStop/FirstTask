@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  get '/maketrap/', to: 'maketrap#index'
+  #post 'maketrap/add_to_db'
+  #get 'maketrap/add_to_db'
+
+  get 'requests', to: 'requests#index'
   get ':name/request', to: 'requests#show'
+  get 'requests/:name', to: 'requests#show'
+
+  post ':name/request', to: 'requests#show'
+  get ':name', to: 'maketrap#index'
+
+
 
   resources :requests
 
