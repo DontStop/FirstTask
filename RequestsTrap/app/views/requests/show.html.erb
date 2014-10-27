@@ -2,7 +2,20 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @request.name %>
-</p>
+  <%= @request.name %> </p>
+  <table>
+    <% @https.each do |http| %>
+    <tr>
+      <td><%= http.remote_ip.to_s %></td>
+      <td><%= http.request_method %></td>
+      <td><%= http.query_string %></td>
+
+      <td>
+      </td>
+    </tr>
+
+        <% end %>
+  </table>
+
 
 <%= link_to 'Back', requests_path %>

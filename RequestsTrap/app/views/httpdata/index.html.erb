@@ -1,0 +1,33 @@
+<h1>Listing httpdata</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Remote ip</th>
+      <th>Request method</th>
+      <th>Query string</th>
+      <th>Query params</th>
+      <th>Request</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @httpdata.each do |httpdatum| %>
+      <tr>
+        <td><%= httpdatum.remote_ip %></td>
+        <td><%= httpdatum.request_method %></td>
+        <td><%= httpdatum.query_string %></td>
+        <td><%= httpdatum.query_params %></td>
+        <td><%= httpdatum.request_id %></td>
+        <td><%= link_to 'Show', httpdatum %></td>
+        <td><%= link_to 'Edit', edit_httpdatum_path(httpdatum) %></td>
+        <td><%= link_to 'Destroy', httpdatum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Httpdatum', new_httpdatum_path %>

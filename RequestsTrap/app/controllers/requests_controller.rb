@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
   # GET /requests/1
   # GET /requests/1.json
   def show
-
+    @https=Httpdata.all
   end
 
   # GET /requests/new

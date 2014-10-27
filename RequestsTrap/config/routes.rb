@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :httpdata
+
   #get 'maketrap/', to: 'maketrap#index'
 
   get 'requests', to: 'requests#index'
