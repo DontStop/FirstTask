@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   #get 'requests/:name', to: 'requests#show'
 
   #post ':name/request', to: 'requests#show'
-  get ':name', to: 'maketrap#index'
+  match ':name', to: 'maketrap#index', via: :all
   get ':name/delete', to: 'requests#destroy'
 
   resources :requests

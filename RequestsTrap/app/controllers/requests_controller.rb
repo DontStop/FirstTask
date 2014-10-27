@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
   # GET /requests/1
   # GET /requests/1.json
   def show
-    @https=Httpdata.all
+    @https=Httpdata.all.where(request_id: Request.find_by_name(params[:name]))
   end
 
   # GET /requests/new

@@ -5,7 +5,8 @@ class MaketrapController < ApplicationController
     #if @request==nil
 
     httpdata=Httpdata.new
-    httpdata.remote_ip=@request.id
+    httpdata.request_id=@request.id
+    httpdata.remote_ip=request.remote_ip
     httpdata.request_method=request.method_symbol
     httpdata.query_string=request.query_string
     httpdata.query_params=request.request_parameters().to_s if request.post?
