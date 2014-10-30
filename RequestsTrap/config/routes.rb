@@ -1,17 +1,8 @@
 Rails.application.routes.draw do
-  resources :httpdata
-
-  #get 'maketrap/', to: 'maketrap#index'
-
   get 'requests', to: 'requests#index'
-  get ':name/request', to: 'requests#show#'#, as: :show_request
-  #get 'requests/:name', to: 'requests#show'
-
-  #post ':name/request', to: 'requests#show'
-  match ':name', to: 'maketrap#index', via: :all
+  get ':name/request', to: 'requests#show'
   get ':name/delete', to: 'requests#destroy'
-
-  resources :requests
+  match '*name', to: 'maketrap#index', via: :all
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
