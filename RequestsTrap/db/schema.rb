@@ -23,29 +23,6 @@ ActiveRecord::Schema.define(version: 20141027151723) do
     t.datetime "updated_at"
   end
 
-  create_table "httpsavedrequests", force: true do |t|
-    t.string   "remote_ip"
-    t.string   "request_method"
-    t.string   "query_string"
-    t.string   "query_params"
-    t.string   "cookies"
-    t.string   "headers"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "httpsaves", force: true do |t|
-    t.integer  "request_id"
-    t.integer  "remote_ip"
-    t.string   "request_method"
-    t.string   "query_string"
-    t.string   "query_params"
-    t.string   "cookies"
-    t.string   "headers"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "requests", force: true do |t|
     t.string   "name"
     t.datetime "created_at"

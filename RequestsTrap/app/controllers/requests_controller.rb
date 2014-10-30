@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :set_request, only: [:show, :update, :destroy]
 
   # GET /requests
   # GET /requests.json
@@ -13,30 +13,6 @@ class RequestsController < ApplicationController
     @https=Httpdata.all.where(request_id: Request.find_by_name(params[:name]))
   end
 
-  # GET /requests/new
-  def new
-    @request = Request.new
-  end
-
-  # GET /requests/1/edit
-  def edit
-  end
-
-  # POST /requests
-  # POST /requests.json
-  def create
-    @request = Request.new(request_params)
-
-    respond_to do |format|
-      if @request.save
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
-        format.json { render :show, status: :created, location: @request }
-      else
-        format.html { render :new }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json

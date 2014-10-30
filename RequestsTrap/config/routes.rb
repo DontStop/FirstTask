@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'requests', to: 'requests#index'
-  get ':name/request', to: 'requests#show'
-  get ':name/delete', to: 'requests#destroy'
+  get '*name/request', to: 'requests#show'
+  get '*name/delete', to: 'requests#destroy'
   match '*name', to: 'maketrap#index', via: :all
 
   # The priority is based upon order of creation: first created -> highest priority.
